@@ -1,6 +1,7 @@
 import { Facebook, Heart, Instagram, MapPin, Phone, Sparkles, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
+import basicInfo from '../constants/BasicInfo';
 
 const Footer: React.FC = () => {
     const socialLinks = [
@@ -121,8 +122,8 @@ const Footer: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm text-gray-400">Call Now</p>
-                                    <a href="tel:07480233841" className="text-white font-semibold hover:text-pink-400 transition-colors duration-300">
-                                        07480233841
+                                    <a href={`tel:${basicInfo.phone}`} className="text-white font-semibold hover:text-pink-400 transition-colors duration-300">
+                                        {basicInfo.phone}
                                     </a>
                                 </div>
                             </div>
@@ -133,13 +134,13 @@ const Footer: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm text-gray-400">Visit Us</p>
-                                    <p className="text-white">123 Beauty Street<br />City, UK</p>
+                                    <p className="text-white">{basicInfo.address}</p>
                                 </div>
                             </div>
 
                             {/* Call to Action */}
                             <a
-                                href="tel:07480233841"
+                                href={`tel:${basicInfo.phone}`}
                                 className="inline-block w-full mt-6 bg-gradient-to-r from-pink-500 via-pink-600 to-purple-600 text-white py-4 px-6 rounded-2xl font-bold text-center shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden group"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>

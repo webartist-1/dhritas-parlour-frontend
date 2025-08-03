@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import basicInfo from "../../constants/BasicInfo";
 
 interface OwnerStoryProps {
   ownerName?: string;
@@ -10,13 +11,17 @@ interface OwnerStoryProps {
 }
 
 const OwnerStory: React.FC<OwnerStoryProps> = ({
-  ownerName = "Sarah Johnson",
-  ownerTitle = "Founder & Master Aesthetician",
+  ownerName = basicInfo.ownerName,
+  ownerTitle = basicInfo.ownerTitle,
   ownerImage = "/api/placeholder/400/500",
   story = [
-    "My journey in the beauty industry began over a decade ago with a simple belief: everyone deserves to feel beautiful and confident in their own skin. What started as a passion for helping others enhance their natural beauty has evolved into a thriving sanctuary of wellness and aesthetic excellence.",
-    "After graduating from the prestigious International Academy of Beauty Sciences, I spent years perfecting my craft in some of the most renowned salons across the country. Each experience taught me something new about the artistry of beauty and the importance of personalized care.",
-    "In 2018, I decided to create a space that would combine cutting-edge techniques with a warm, welcoming atmosphere. Our salon isn't just about treatments—it's about creating an experience that leaves you feeling renewed, confident, and absolutely radiant."
+    `
+I’m Drita, founder of Drita’s Aesthetics & SPMU Brows, based in London. With years of advanced aesthetics experience and VTCT qualifications (Levels 3–7 in Beauty Therapy, SPMU, Skin Peels & Microneedling, and Aesthetic Practice), I offer expert treatments tailored to you.
+
+I specialise in IPL skin rejuvenation, targeted boosters, and advanced thread lifts (Mono, Screw, Cog) for natural tightening, added volume, and lifted contours.
+
+At my London salon, you’ll experience a welcoming, regulated environment equipped with modern technology, where personalised care and proven results come first—so you can enjoy clearer skin, defined brows, and lasting confidence.
+`
   ],
   yearsExperience = 12
 }) => {
@@ -87,7 +92,7 @@ const OwnerStory: React.FC<OwnerStoryProps> = ({
                   Life is not perfect, but your nails can be
                 </blockquote>
                 <div className="mt-4 flex items-center">
-                  <div className="text-gray-800 font-semibold">{ownerName}</div>
+                  <div className="text-gray-800 font-semibold whitespace-nowrap">{ownerName}</div>
                   <div className="w-8 h-px bg-pink-400 mx-4"></div>
                   <div className="text-gray-500 text-sm">{ownerTitle}</div>
                 </div>
